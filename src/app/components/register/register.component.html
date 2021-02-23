@@ -1,0 +1,83 @@
+<div class="backdrop"></div>
+
+<mat-card class="modal">
+  <form [formGroup]="form" (ngSubmit)="submit()" class="example-form">
+    <div><mat-icon>person_pin</mat-icon></div>
+
+        <mat-form-field>
+          <input type="text" formControlName="firstName" placeholder="firstName">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="text" formControlName="lastName" placeholder="lastName">
+        </mat-form-field>
+
+    <div>
+      <mat-icon>alternate_email</mat-icon>
+    </div>
+
+    <mat-form-field [ngClass]="{invalid: form.get('email').invalid && form.get('email').touched}">
+      <div class="user fullw">
+        <mat-form-field>
+          <input type="email" formControlName="email" placeholder="Ex. pat@example.com">
+        </mat-form-field>
+      </div>
+
+      <div class="error" *ngIf="form.get('email').invalid && form.get('email').touched">
+        <mat-error *ngIf="form.get('email').errors.required">
+          მეილი არის საჭირო <3
+        </mat-error>
+        <mat-error *ngIf="form.get('email').errors.email">
+          მეილი სწორად შეიყვანე ბანძო
+        </mat-error>
+      </div>
+
+    </mat-form-field>
+
+    <div>
+      <mat-icon>security</mat-icon>
+    </div>
+
+    <div formGroupName="passwords">
+      <div>
+        <mat-form-field [ngClass]="{invalid: form.get('passwords').get('pw').invalid && form.get('passwords').get('pw').touched}">
+          <input type="password" formControlName="pw" placeholder="pw">
+
+          <div class="error" *ngIf="form.get('passwords').get('pw').invalid && form.get('passwords').get('pw').touched">
+            <mat-error *ngIf="form.get('passwords').get('pw').errors.required">
+              პაროლი უეჭველი გინდა
+            </mat-error>
+            <mat-error *ngIf="form.get('passwords').get('pw').errors.minlength as min">
+              პაროლის მინიმალური სიგრძეა 6 და არა {{min.actualLength}}
+            </mat-error>
+          </div>
+      </mat-form-field>
+      </div>
+
+      <div class="form-control">
+        <mat-form-field [ngClass]="{invalid: (form.get('passwords').get('repw').invalid) && form.get('passwords').get('repw').touched}">
+          <input type="password" formControlName="repw" placeholder="repw">
+
+          <div class="error" *ngIf="(form.get('passwords').get('repw').invalid) && form.get('passwords').get('repw').touched">
+            <mat-error *ngIf="form.get('passwords').get('repw').errors.required">
+              required
+            </mat-error>
+            <mat-error *ngIf="form.get('passwords').get('repw').errors.minlength">
+              minlength
+            </mat-error>
+          </div>
+        </mat-form-field>
+      </div>
+
+      <div class="error" *ngIf="form.get('passwords').errors !== null as bool">
+        <mat-error [ngClass]="{invalid: bool}">
+          notSame
+        </mat-error>
+      </div>
+    </div>
+      <button mat-raised-button color="primary" type="submit" >submit</button>
+  </form>
+  <div class="close">
+    <button mat-raised-button color="accent" (click)="close.emit()">Close</button>
+  </div>
+</mat-card>

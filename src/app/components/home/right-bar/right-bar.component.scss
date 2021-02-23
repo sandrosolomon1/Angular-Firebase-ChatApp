@@ -1,0 +1,19 @@
+.bar {
+  position: fixed;
+  top: 52px;
+  right: 0;
+  height: 100vh;
+  width: 12rem;
+  background: #333333;
+
+  .content {
+    width: 80%;
+    margin: 1rem auto;
+
+    .ad {
+      background: #008a00;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

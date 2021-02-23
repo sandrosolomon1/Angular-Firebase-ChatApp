@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fbclone-b8a13": {
+      "hosting": {
+        "fbclone": [
+          "fbclone-b8a13"
+        ]
+      }
+    }
+  }
+}

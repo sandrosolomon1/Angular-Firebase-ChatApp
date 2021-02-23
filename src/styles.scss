@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'ALK Rex Bold', sans-serif;
+  font-weight: bolder;
+  overflow-x: hidden;
+}
+
+.invalid {
+  color: red;
+  border-color: darkred;
+}
+
+.error {
+  font-size: 1rem;
+}
+
+.mat-raised-button.mat-button-disabled.mat-button-disabled {
+  background-color: #3f51b5;
+  opacity: 0.7;
+  color: #fff;
+}
+
+.login {
+  margin-bottom: 0;
+}
+
+.bg-login {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background: url("./assets/img/bg-login.jpg") no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+
+  .container {
+    z-index: 3;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-card {
+      width: 30rem;
+      border: none;
+      padding: 2rem;
+      color: #fff;
+
+      .inner {
+        text-align: center;
+
+        .el {
+          padding: 1rem;
+          color: #888888;
+          border-radius: 5px;
+          font-size: 1.5rem;
+          width: 80%;
+          margin: 0 auto 1rem auto;
+        }
+        .inp {
+          margin-bottom: 1rem;
+
+          input {
+            width: 80%;
+            border: none;
+            border-radius: 1rem;
+            padding: 1rem;
+            background: #fff;
+            color: #888888;
+
+            &:first-child {
+              margin-top: 1rem;
+            }
+          }
+        }
+
+        .btn {
+          font-weight: bolder;
+          font-size: 1rem;
+          margin-top: 1rem;
+          padding: 0.5rem 1.5rem;
+          background: transparent;
+          border: 1px solid #fff;
+          color: #008a00;
+          transition: 0.5s ease-in;
+
+          &:hover {
+            border: 1px solid #008a00;
+          }
+
+
+        }
+      }
+    }
+  }
+}

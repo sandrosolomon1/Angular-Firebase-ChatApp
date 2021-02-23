@@ -1,0 +1,48 @@
+<ng-template appModal></ng-template>
+
+<div class="backdrop"></div>
+
+<div class="bg-login">
+  <div class="container">
+    <form class="form-card" [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="inner">
+        <div class="el" *ngIf="message as sms">
+          {{sms}}
+        </div>
+
+        <div class="inp" [ngClass]="{invalid: form.get('email').invalid && form.get('email').touched}">
+          <input formControlName="email" type="email" id="email" placeholder="ჩაწერე მეილი მიდი">
+          <div *ngIf="form.get('email').invalid && form.get('email').touched">
+            <small class="error" *ngIf="form.get('email').errors.email">
+              Nice email , try another
+            </small>
+            <small class="error" *ngIf="form.get('email').errors.required">
+              Email is required betch
+            </small>
+          </div>
+        </div>
+
+        <div class="inp" [ngClass]="{invalid: form.get('password').invalid && form.get('password').touched}">
+          <input formControlName="password" type="password" id="password" placeholder="პაროლიც მიდი">
+          <div *ngIf="form.get('password').invalid && form.get('password').touched">
+            <small class="error" *ngIf="form.get('password').errors.minlength">
+              Password is too short like your cock
+            </small>
+            <small class="error" *ngIf="form.get('password').errors.required">
+              Fill Password field please betch
+            </small>
+          </div>
+        </div>
+
+<!--        <button class="btn" type="submit" [disabled]="form.invalid || submitted">შესვლა</button>-->
+        <div class="login">
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || submitted">Login</button>
+        </div>
+        <br>
+        <button class="register" mat-raised-button color="primary" (click)="showmodal()">Register</button>
+      </div>
+
+    </form>
+  </div>
+</div>

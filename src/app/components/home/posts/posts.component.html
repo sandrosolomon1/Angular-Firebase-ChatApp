@@ -1,0 +1,28 @@
+<div class="posts">
+
+  <form class="example-form" [formGroup]="form" (ngSubmit)="Submit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Message</mat-label>
+      <input matInput #message maxlength="256" formControlName="post">
+      <mat-hint align="start"><strong>+18 shit,ll get banned betch</strong> </mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 100</mat-hint>
+    </mat-form-field>
+  </form>
+
+  <div class="post" *ngFor="let post of posts">
+    <div>
+      <div class="post-head">
+        <mat-icon>person_outline</mat-icon>
+        <span class="title">{{post?.title}}</span>
+      </div>
+
+      <div class="data">
+        <div class="post-message">{{post?.message}}</div>
+        <div class="time">{{post?.time?.seconds * 1000 | date:'shortTime'}}</div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

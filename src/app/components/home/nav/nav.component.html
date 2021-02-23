@@ -1,0 +1,27 @@
+<nav>
+  <div>
+    <img mat-card-avatar src="https://cdn.shopify.com/s/files/1/0739/6727/products/reflective-motorcycle-sticker-fuck-you-2-pack_600x.png?v=1499661563">
+  </div>
+
+  <div class="icons">
+    <div>
+      <mat-icon matBadge="2" matBadgeColor="warn">notifications</mat-icon>
+    </div>
+    <div>
+      <mat-icon matBadge="3" matBadgeColor="warn">people</mat-icon>
+    </div>
+    <div>
+      <mat-icon matBadge="4" matBadgeColor="warn">wb_cloudy</mat-icon>
+    </div>
+
+    <div>
+      <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon> Logout
+        </button>
+      </mat-menu>
+    </div>
+
+  </div>
+</nav>

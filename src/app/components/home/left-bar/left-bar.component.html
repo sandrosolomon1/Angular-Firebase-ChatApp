@@ -1,0 +1,28 @@
+<div class="bar">
+  <div class="friends">
+    <div class="header-text">
+      <mat-icon>explore</mat-icon>
+    </div>
+
+    <mat-card class="card" *ngFor="let user of users">
+      <mat-card-header>
+        <img mat-card-avatar src="https://cdn.shopify.com/s/files/1/0739/6727/products/reflective-motorcycle-sticker-fuck-you-2-pack_600x.png?v=1499661563">
+        <div>
+          <mat-card-title>{{user.data.firstName}}</mat-card-title>
+
+          <mat-card-subtitle *ngIf="user.obs as presence">
+            <div>
+              <mat-icon>radio_button_checked</mat-icon><span>{{presence.status}}</span>
+            </div>
+<!--            <div *ngIf="presence.status === 'offline'">-->
+<!--              <mat-icon>radio_button_unchecked</mat-icon><span>offline</span>-->
+<!--            </div>-->
+<!--            <div *ngIf="presence.status  === 'away'">-->
+<!--              <mat-icon>radio_button_unchecked</mat-icon><span>away</span>-->
+<!--            </div>-->
+          </mat-card-subtitle>
+        </div>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

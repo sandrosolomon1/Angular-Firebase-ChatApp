@@ -1,0 +1,32 @@
+$mat-card-header-size: 40px !default;
+.mat-card-avatar {
+  height: $mat-card-header-size;
+  width: $mat-card-header-size;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+nav {
+  z-index: 1000;
+  position: fixed;
+  width: 100vw;
+  padding: 1rem;
+  background: rgb(213,160,66);
+  background: linear-gradient(90deg, rgba(213,160,66,1) 0%, rgba(87,39,134,1) 100%);
+  display: flex;
+  justify-content: space-between;
+
+  .icons {
+    display: flex;
+    align-items: center;
+    div {
+      padding: 0 1rem;
+
+      mat-icon {
+        font-size: 2rem;
+        color: #fff;
+      }
+    }
+  }
+}

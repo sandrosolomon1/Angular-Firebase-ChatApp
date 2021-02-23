@@ -1,0 +1,61 @@
+.title {
+  color: #e60000;
+  font-weight: bolder;
+}
+
+.example-form {
+  width: 100%;
+}
+
+.example-full-width {
+  width: 99%;
+}
+
+.posts {
+  position: absolute;
+  top: calc(46px + 2rem);
+  left: 20rem;
+  width: calc(100vw - 20rem);
+  overflow: hidden;
+
+  form {
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .post {
+    margin: 1rem;
+    padding: 1rem;
+    width: 97%;
+    overflow: hidden;
+    background: #333333;
+    border-radius: 1rem;
+    color: #fff;
+    display: flex;
+    position: relative;
+
+    .post-head {
+      display: flex;
+      align-items: center;
+
+      .title {
+        margin-left: 3px;
+      }
+
+      .mat-icon {
+        margin-bottom: 3px;
+      }
+    }
+
+    .data {
+      display: flex;
+
+      .time {
+        position: absolute;
+        right: 1rem;
+      }
+    }
+
+  }
+}
